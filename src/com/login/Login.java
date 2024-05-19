@@ -27,70 +27,99 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         Background = new javax.swing.JPanel();
-        TxtTemperatura2 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
         jCheckBox1 = new javax.swing.JCheckBox();
         BtnIniciarSesion = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        TxtTemperatura2 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jPasswordField1 = new javax.swing.JPasswordField();
+        BtnIniciarSesion1 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Background.setBackground(new java.awt.Color(0, 0, 0));
+        Background.setMinimumSize(new java.awt.Dimension(400, 300));
         Background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        TxtTemperatura2.setBackground(new java.awt.Color(0, 0, 0));
-        TxtTemperatura2.setForeground(new java.awt.Color(204, 204, 204));
-        TxtTemperatura2.setText("Ingrese su usuario");
-        TxtTemperatura2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "USUARIO", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Roboto", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
-        TxtTemperatura2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtTemperatura2ActionPerformed(evt);
-            }
-        });
-        Background.add(TxtTemperatura2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 248, 50));
-
-        jLabel3.setFont(new java.awt.Font("Roboto Black", 0, 10)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("¡Olvide mi contraseña!");
-        Background.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 110, 20));
-
-        jPasswordField1.setBackground(new java.awt.Color(0, 0, 0));
-        jPasswordField1.setForeground(new java.awt.Color(255, 255, 255));
-        jPasswordField1.setText("jPasswordField1");
-        jPasswordField1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CONTRASEÑA", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Roboto", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
-        Background.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 250, 50));
 
         jCheckBox1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox1.setText("Permanecer Conectado");
-        Background.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
+        Background.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
 
-        BtnIniciarSesion.setBackground(new java.awt.Color(51, 153, 0));
+        BtnIniciarSesion.setBackground(new java.awt.Color(0, 51, 204));
         BtnIniciarSesion.setFont(new java.awt.Font("Roboto Black", 1, 12)); // NOI18N
         BtnIniciarSesion.setForeground(new java.awt.Color(255, 255, 255));
-        BtnIniciarSesion.setText("INICIAR SESION");
-        BtnIniciarSesion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BtnIniciarSesion.setText("REGISTRO");
+        BtnIniciarSesion.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
         BtnIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnIniciarSesionActionPerformed(evt);
             }
         });
-        Background.add(BtnIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, 130, 40));
+        Background.add(BtnIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, 130, 40));
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 0));
         jLabel6.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Bienvenido, Por favor Ingrese sus datos:");
-        Background.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 230, 40));
+        Background.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 230, 40));
         Background.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("PRUEBA LOGIN");
-        Background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 140, 33));
+        Background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 140, 33));
+
+        jLabel4.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("USUARIO:");
+        Background.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
+
+        TxtTemperatura2.setBackground(new java.awt.Color(0, 0, 0));
+        TxtTemperatura2.setForeground(new java.awt.Color(204, 204, 204));
+        TxtTemperatura2.setText("Ingrese su usuario");
+        TxtTemperatura2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtTemperatura2ActionPerformed(evt);
+            }
+        });
+        Background.add(TxtTemperatura2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 360, 30));
+
+        jLabel5.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("CONTRASEÑA:");
+        Background.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+
+        jPasswordField1.setBackground(new java.awt.Color(0, 0, 0));
+        jPasswordField1.setForeground(new java.awt.Color(255, 255, 255));
+        jPasswordField1.setText("jPasswordField1");
+        Background.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 360, 30));
+
+        BtnIniciarSesion1.setBackground(new java.awt.Color(51, 153, 0));
+        BtnIniciarSesion1.setFont(new java.awt.Font("Roboto Black", 1, 12)); // NOI18N
+        BtnIniciarSesion1.setForeground(new java.awt.Color(255, 255, 255));
+        BtnIniciarSesion1.setText("INICIAR SESION");
+        BtnIniciarSesion1.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+        BtnIniciarSesion1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnIniciarSesion1ActionPerformed(evt);
+            }
+        });
+        Background.add(BtnIniciarSesion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 130, 40));
+
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Roboto Black", 0, 10)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("¡Olvide mi contraseña!");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 110, 20));
+
+        Background.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -100,19 +129,25 @@ public class Login extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(Background, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void BtnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnIniciarSesionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnIniciarSesionActionPerformed
+
     private void TxtTemperatura2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtTemperatura2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtTemperatura2ActionPerformed
 
-    private void BtnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnIniciarSesionActionPerformed
+    private void BtnIniciarSesion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnIniciarSesion1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BtnIniciarSesionActionPerformed
+    }//GEN-LAST:event_BtnIniciarSesion1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,12 +187,16 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Background;
     private javax.swing.JButton BtnIniciarSesion;
+    private javax.swing.JButton BtnIniciarSesion1;
     private javax.swing.JTextField TxtTemperatura2;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
     // End of variables declaration//GEN-END:variables
 }
