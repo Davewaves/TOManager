@@ -31,19 +31,19 @@ public class Registro {
     }
     
     public String getTitulo() {
-    return titulo;
-}
-    public String getEstado() {
-    return estado;
-}
+        return titulo;
+    }
+        public String getEstado() {
+        return estado;
+    }
 
-public String getPrioridad() {
-    return prioridad;
-}
+    public String getPrioridad() {
+        return prioridad;
+    }
 
-public String getDescripcion() {
-    return descripcion;
-}
+    public String getDescripcion() {
+        return descripcion;
+    }
     
     public Date getFechaSeleccionada() {
         return fechaSeleccionada;
@@ -52,4 +52,30 @@ public String getDescripcion() {
     public LocalTime getHoraSeleccionada() {
         return horaSeleccionada;
     }
+    
+    
+    //metodos set
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+        public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public void setPrioridad(String prioridad) {
+        this.prioridad = prioridad;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+    
+    public void setFechaSeleccionada(Date fechaSeleccionada) {
+        this.fechaSeleccionada = fechaSeleccionada;
+    }
+    
+    public void setHoraSeleccionada(LocalTime horaSeleccionada) {
+        this.horaSeleccionada = horaSeleccionada;
+    }
+    
 }

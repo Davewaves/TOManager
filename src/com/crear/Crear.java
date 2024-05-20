@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Date;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -11,6 +12,8 @@ import javax.swing.JOptionPane;
  * @author Davewaves
  */
 public class Crear extends javax.swing.JFrame {
+    
+    private Registro registro;
 
     /**
      * Creates new form Crear
@@ -60,8 +63,8 @@ public class Crear extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("CREAR Y EDITAR TAREAS");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 230, 33));
+        jLabel1.setText("CREAR  TAREAS");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 140, 33));
 
         jLabel4.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
         jLabel4.setText("TITULO:");
@@ -271,6 +274,7 @@ public class Crear extends javax.swing.JFrame {
 
     private void BtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarActionPerformed
 
+        
         LocalTime horaSeleccionada;
         String Titulo = TxtTitulo.getText();
         Date FechaSeleccionada = jDateChooser.getDate();
@@ -312,12 +316,16 @@ public class Crear extends javax.swing.JFrame {
         // Hcaer visible el JFRAME
         mBuscar.setVisible(true);
 
-        // Crea un nuevo registro y agrégalo a DatosCompartidos
+        ArrayList<Registro> registros = DatosCompartidos.getRegistros();
         Registro registro = new Registro(Titulo, FechaSeleccionada, horaSeleccionada, Prioridad, Estado, Descripcion);
         DatosCompartidos.agregarRegistro(registro);
 
+        
+        
     }//GEN-LAST:event_BtnGuardarActionPerformed
 
+    
+    
     private void BtnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNuevoActionPerformed
 
         //Limpiar los modulos
@@ -443,4 +451,12 @@ public class Crear extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     // End of variables declaration//GEN-END:variables
+
+    private String formatDate(Date fechaSeleccionada) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private String formatTime(LocalTime horaSeleccionada) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

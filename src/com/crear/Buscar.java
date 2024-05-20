@@ -91,6 +91,11 @@ public class Buscar extends javax.swing.JFrame {
         BtnEliminar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/BorrarSelected24px.png"))); // NOI18N
         BtnEliminar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/BuscarSelected30px.png"))); // NOI18N
         BtnEliminar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        BtnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEliminarActionPerformed(evt);
+            }
+        });
         jPanel1.add(BtnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, -1, -1));
 
         BtnSalir.setBackground(new java.awt.Color(255, 51, 51));
@@ -119,6 +124,11 @@ public class Buscar extends javax.swing.JFrame {
         BtnEditar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/EditarSelected24Px.png"))); // NOI18N
         BtnEditar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/EditarSelected24Px.png"))); // NOI18N
         BtnEditar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        BtnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEditarActionPerformed(evt);
+            }
+        });
         jPanel1.add(BtnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 60, -1));
 
         JTablaInfo.setModel(new javax.swing.table.DefaultTableModel(
@@ -188,6 +198,34 @@ public class Buscar extends javax.swing.JFrame {
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_BtnAtrasActionPerformed
+
+    private void BtnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEditarActionPerformed
+        
+        ArrayList<Registro> registros = DatosCompartidos.getRegistros();
+        int filaSel = JTablaInfo.getSelectedRow(); //obtiene indice de fila seleccionada
+        
+        Registro sel = registros.get(filaSel);//carga el registro segun indice de la fila seleccionada
+        
+        com.crear.Editar indice = new com.crear.Editar(filaSel); //envia indice para saber que registro editar
+        
+        System.out.println("buscar" + filaSel);
+        com.crear.Editar abrir = new com.crear.Editar(); //abre la pantalla de editar
+        
+        abrir.llenarCampos(sel); //usa el metodo llenarCampos() de la clase crear llevando el indice
+        
+        abrir.setVisible(true);
+        this.setVisible(false);
+       
+        
+    }//GEN-LAST:event_BtnEditarActionPerformed
+
+    private void BtnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarActionPerformed
+        // elimina el registro 
+        int filaSel = JTablaInfo.getSelectedRow(); //obtiene indice de fila seleccionada
+        
+        DatosCompartidos.eliminarRegistro(filaSel);//llama funcion para eliminar
+        mt.removeRow(filaSel);//elimina la fila de la tabla
+    }//GEN-LAST:event_BtnEliminarActionPerformed
 
     /**
      * @param args the command line arguments
