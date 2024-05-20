@@ -59,6 +59,11 @@ public class Principal extends javax.swing.JFrame {
         jButton2.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/CerrarSelectex30px.png"))); // NOI18N
         jButton2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/CerrarSelectex30px.png"))); // NOI18N
         jButton2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/CerrarSelectex30px.png"))); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 340, 50));
 
         jButton4.setBackground(new java.awt.Color(0, 204, 51));
@@ -71,6 +76,11 @@ public class Principal extends javax.swing.JFrame {
         jButton4.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/Nuevo_Selected30px.png"))); // NOI18N
         jButton4.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/Nuevo_Selected30px.png"))); // NOI18N
         jButton4.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/Nuevo_Selected30px.png"))); // NOI18N
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 340, 50));
 
         jButton5.setBackground(new java.awt.Color(0, 51, 153));
@@ -100,6 +110,16 @@ public class Principal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        com.crear.Crear abrir = new com.crear.Crear();
+        abrir.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        System.exit(WIDTH);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
