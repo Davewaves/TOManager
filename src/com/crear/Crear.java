@@ -4,17 +4,23 @@
  */
 package com.crear;
 
+import java.time.LocalTime;
+import java.util.Date;
+
+
 /**
  *
  * @author Davewaves
  */
 public class Crear extends javax.swing.JFrame {
-
+    
+    
     /**
      * Creates new form Crear
      */
     public Crear() {
         initComponents();
+        
     }
 
     /**
@@ -29,27 +35,29 @@ public class Crear extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        TxtTemperatura2 = new javax.swing.JTextField();
-        TxtTemperatura3 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        TxtTitulo = new javax.swing.JTextField();
+        TxtDescripcion = new javax.swing.JTextField();
+        jComboBoxPrioridad = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jButton4 = new javax.swing.JButton();
+        BtnGuardar = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        BtnNuevo = new javax.swing.JButton();
+        BtnSalir = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
-        jButton8 = new javax.swing.JButton();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        BtnEliminar = new javax.swing.JButton();
+        jDateChooser = new com.toedter.calendar.JDateChooser();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        jComboBoxMinutos = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        jComboBoxHora = new javax.swing.JComboBox<>();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jComboBoxEstado = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,195 +69,227 @@ public class Crear extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("CREAR Y EDITAR TAREAS");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 230, 33));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 230, 33));
 
         jLabel4.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
         jLabel4.setText("TITULO:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
-        TxtTemperatura2.setText("Ingrese el titulo");
-        TxtTemperatura2.addActionListener(new java.awt.event.ActionListener() {
+        TxtTitulo.setText("Ingrese el titulo");
+        TxtTitulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtTemperatura2ActionPerformed(evt);
+                TxtTituloActionPerformed(evt);
             }
         });
-        jPanel1.add(TxtTemperatura2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 200, 30));
+        jPanel1.add(TxtTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 200, 30));
 
-        TxtTemperatura3.setText("Ingrese la descripción");
-        TxtTemperatura3.addActionListener(new java.awt.event.ActionListener() {
+        TxtDescripcion.setText("Ingrese la descripción");
+        TxtDescripcion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtTemperatura3ActionPerformed(evt);
+                TxtDescripcionActionPerformed(evt);
             }
         });
-        jPanel1.add(TxtTemperatura3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 310, 90));
+        jPanel1.add(TxtDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 330, 90));
 
-        jComboBox1.setEditable(true);
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Baja", "Media", "Alta" }));
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 80, -1));
+        jComboBoxPrioridad.setEditable(true);
+        jComboBoxPrioridad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Baja", "Media", "Alta" }));
+        jPanel1.add(jComboBoxPrioridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 152, 80, 30));
 
         jLabel8.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
         jLabel8.setText("DESCRIPCIÓN:");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 0));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0), 3));
 
-        jButton4.setBackground(new java.awt.Color(0, 156, 39));
-        jButton4.setFont(new java.awt.Font("Roboto Black", 1, 9)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/Guardar24px.png"))); // NOI18N
-        jButton4.setText("GUARDAR");
-        jButton4.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        jButton4.setFocusPainted(false);
-        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton4.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/GuardarSelected24px.png"))); // NOI18N
-        jButton4.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/GuardarSelected24px.png"))); // NOI18N
-        jButton4.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/GuardarSelected24px.png"))); // NOI18N
-        jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        BtnGuardar.setBackground(new java.awt.Color(0, 156, 39));
+        BtnGuardar.setFont(new java.awt.Font("Roboto Black", 1, 9)); // NOI18N
+        BtnGuardar.setForeground(new java.awt.Color(255, 255, 255));
+        BtnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/Guardar24px.png"))); // NOI18N
+        BtnGuardar.setText("GUARDAR");
+        BtnGuardar.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+        BtnGuardar.setFocusPainted(false);
+        BtnGuardar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BtnGuardar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/GuardarSelected24px.png"))); // NOI18N
+        BtnGuardar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/GuardarSelected24px.png"))); // NOI18N
+        BtnGuardar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/GuardarSelected24px.png"))); // NOI18N
+        BtnGuardar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        BtnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnGuardarActionPerformed(evt);
+            }
+        });
 
-        jButton6.setBackground(new java.awt.Color(0, 40, 121));
-        jButton6.setFont(new java.awt.Font("Roboto Black", 1, 9)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/Editar24Px.png"))); // NOI18N
-        jButton6.setText("EDITAR");
-        jButton6.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        jButton6.setFocusPainted(false);
-        jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton6.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/EditarSelected24Px.png"))); // NOI18N
-        jButton6.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/EditarSelected24Px.png"))); // NOI18N
-        jButton6.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/EditarSelected24Px.png"))); // NOI18N
-        jButton6.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        BtnNuevo.setBackground(new java.awt.Color(0, 40, 121));
+        BtnNuevo.setFont(new java.awt.Font("Roboto Black", 1, 9)); // NOI18N
+        BtnNuevo.setForeground(new java.awt.Color(255, 255, 255));
+        BtnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/Editar24Px.png"))); // NOI18N
+        BtnNuevo.setText("NUEVO");
+        BtnNuevo.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+        BtnNuevo.setFocusPainted(false);
+        BtnNuevo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BtnNuevo.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/EditarSelected24Px.png"))); // NOI18N
+        BtnNuevo.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/EditarSelected24Px.png"))); // NOI18N
+        BtnNuevo.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/EditarSelected24Px.png"))); // NOI18N
+        BtnNuevo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton7.setBackground(new java.awt.Color(255, 51, 51));
-        jButton7.setFont(new java.awt.Font("Roboto Black", 1, 9)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/Salir24px.png"))); // NOI18N
-        jButton7.setText("SALIR");
-        jButton7.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        jButton7.setFocusPainted(false);
-        jButton7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton7.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/SalirSelected24px.png"))); // NOI18N
-        jButton7.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/SalirSelected24px.png"))); // NOI18N
-        jButton7.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/SalirSelected24px.png"))); // NOI18N
-        jButton7.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        BtnSalir.setBackground(new java.awt.Color(255, 51, 51));
+        BtnSalir.setFont(new java.awt.Font("Roboto Black", 1, 9)); // NOI18N
+        BtnSalir.setForeground(new java.awt.Color(255, 255, 255));
+        BtnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/Salir24px.png"))); // NOI18N
+        BtnSalir.setText("SALIR");
+        BtnSalir.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+        BtnSalir.setFocusPainted(false);
+        BtnSalir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BtnSalir.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/SalirSelected24px.png"))); // NOI18N
+        BtnSalir.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/SalirSelected24px.png"))); // NOI18N
+        BtnSalir.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/SalirSelected24px.png"))); // NOI18N
+        BtnSalir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton8.setBackground(new java.awt.Color(255, 153, 51));
-        jButton8.setFont(new java.awt.Font("Roboto Black", 1, 9)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/Borrar24px.png"))); // NOI18N
-        jButton8.setText("ELIMINAR");
-        jButton8.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        jButton8.setFocusPainted(false);
-        jButton8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton8.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/BorrarSelected24px.png"))); // NOI18N
-        jButton8.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/BorrarSelected24px.png"))); // NOI18N
-        jButton8.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/BuscarSelected30px.png"))); // NOI18N
-        jButton8.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        BtnEliminar.setBackground(new java.awt.Color(255, 153, 51));
+        BtnEliminar.setFont(new java.awt.Font("Roboto Black", 1, 9)); // NOI18N
+        BtnEliminar.setForeground(new java.awt.Color(255, 255, 255));
+        BtnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/Borrar24px.png"))); // NOI18N
+        BtnEliminar.setText("ELIMINAR");
+        BtnEliminar.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+        BtnEliminar.setFocusPainted(false);
+        BtnEliminar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BtnEliminar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/BorrarSelected24px.png"))); // NOI18N
+        BtnEliminar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/BorrarSelected24px.png"))); // NOI18N
+        BtnEliminar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/BuscarSelected30px.png"))); // NOI18N
+        BtnEliminar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(BtnNuevo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(BtnGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(BtnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(8, Short.MAX_VALUE))
-            .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(BtnSalir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BtnNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BtnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BtnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BtnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, 70, 300));
-        jPanel1.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 100, 30));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 0, 70, 320));
+        jPanel1.add(jDateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 120, 30));
 
         jLabel9.setFont(new java.awt.Font("Roboto Black", 0, 10)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("MINUTO:");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 50, 20));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 50, 20));
 
         jLabel10.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
         jLabel10.setText("PRIORIDAD:");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 80, 20));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 80, 20));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59" }));
-        jPanel1.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 50, -1));
+        jComboBoxMinutos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59" }));
+        jPanel1.add(jComboBoxMinutos, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 50, -1));
 
         jLabel12.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
-        jLabel12.setText("ESTABLEZCA EL HORARIO:");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, -1, 20));
+        jLabel12.setText("EL HORARIO:");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, 20));
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24" }));
-        jPanel1.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 50, -1));
+        jComboBoxHora.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24" }));
+        jPanel1.add(jComboBoxHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 50, -1));
 
         jLabel14.setFont(new java.awt.Font("Roboto Black", 0, 10)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("HORA:");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, -1, 20));
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, 20));
 
         jLabel15.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
         jLabel15.setText("FECHA:");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, -1, 20));
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, -1, 20));
 
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText(":");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 150, 10, 20));
+        jLabel2.setText(" :");
+        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 10, 20));
+
+        jLabel11.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        jLabel11.setText("ESTADO:");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 60, 20));
+
+        jComboBoxEstado.setEditable(true);
+        jComboBoxEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pendiente", "Realizado" }));
+        jPanel1.add(jComboBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 100, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TxtTemperatura2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtTemperatura2ActionPerformed
+    private void TxtTituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtTituloActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TxtTemperatura2ActionPerformed
+    }//GEN-LAST:event_TxtTituloActionPerformed
 
-    private void TxtTemperatura3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtTemperatura3ActionPerformed
+    private void TxtDescripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtDescripcionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TxtTemperatura3ActionPerformed
+    }//GEN-LAST:event_TxtDescripcionActionPerformed
+
+    private void BtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarActionPerformed
+    
+    LocalTime horaSeleccionada;
+    String Titulo = TxtTitulo.getText();
+    Date FechaSeleccionada = jDateChooser.getDate();    
+    
+    // Obtener la hora y los minutos seleccionados
+        int hora = Integer.parseInt((String) jComboBoxHora.getSelectedItem());
+        int minuto = Integer.parseInt((String) jComboBoxMinutos.getSelectedItem());
+    
+    // Combinar hora y minutos en una variable LocalTime
+        horaSeleccionada = LocalTime.of(hora, minuto);
+    
+        // Obtener datos de los otros campos
+    String Prioridad = (String) jComboBoxPrioridad.getSelectedItem();
+    String Estado = (String) jComboBoxEstado.getSelectedItem();
+    String Descripcion = TxtDescripcion.getText(); 
+    
+    //Instancia del JFRAME a buscar
+    Buscar mBuscar = new Buscar();
+    
+    //Pasar datos obtenidos al método setDatos
+    mBuscar.setDatos(Titulo, FechaSeleccionada, horaSeleccionada, Prioridad, Estado, Descripcion);
+    
+    // Hcaer visible el JFRAME
+    mBuscar.setVisible(true);
+    
+    }//GEN-LAST:event_BtnGuardarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -287,18 +327,20 @@ public class Crear extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField TxtTemperatura2;
-    private javax.swing.JTextField TxtTemperatura3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private javax.swing.JButton BtnEliminar;
+    private javax.swing.JButton BtnGuardar;
+    private javax.swing.JButton BtnNuevo;
+    private javax.swing.JButton BtnSalir;
+    private javax.swing.JTextField TxtDescripcion;
+    private javax.swing.JTextField TxtTitulo;
+    private javax.swing.JComboBox<String> jComboBoxEstado;
+    private javax.swing.JComboBox<String> jComboBoxHora;
+    private javax.swing.JComboBox<String> jComboBoxMinutos;
+    private javax.swing.JComboBox<String> jComboBoxPrioridad;
+    private com.toedter.calendar.JDateChooser jDateChooser;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
