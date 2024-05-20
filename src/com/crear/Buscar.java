@@ -1,21 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package com.crear;
 
 import com.buscar.*;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.table.DefaultTableModel;
+import com.crear.Registro;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 
 /**
  *
  * @author Davewaves
  */
 public class Buscar extends javax.swing.JFrame {
-    
+
     DefaultTableModel mt = new DefaultTableModel();
+
     private String Titulo;
     private Date FechaSeleccionada;
     private LocalTime horaSeleccionada;
@@ -23,11 +24,37 @@ public class Buscar extends javax.swing.JFrame {
     private String Estado;
     private String Descripcion;
     
+    private String formatDate(Date date) {
+    SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+    return formatter.format(date);
+}
+    private String formatTime(LocalTime time) {
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+    return time.format(formatter);
+}
+
+    private void cargarDatos() {
+        ArrayList<Registro> registros = DatosCompartidos.getRegistros();
+        for (Registro registro : registros) {
+            String fechaFormateada = formatDate(registro.getFechaSeleccionada());
+            String horaFormateada = formatTime(registro.getHoraSeleccionada());
+            mt.addRow(new Object[]{
+                registro.getTitulo(),
+                fechaFormateada,
+                horaFormateada,
+                registro.getEstado(),
+                registro.getPrioridad(),
+                registro.getDescripcion()
+            });
+        }
+    }
+
     public Buscar() {
         initComponents();
-        String titulosTabla [] = {"Titulo","Fecha","Hora","Estado","Prioridad","Descripción"};
+        String titulosTabla[] = {"Titulo", "Fecha", "Hora", "Estado", "Prioridad", "Descripción"};
         mt.setColumnIdentifiers(titulosTabla);
         JTablaInfo.setModel(mt);
+        cargarDatos();
     }
 
     /**
@@ -104,7 +131,15 @@ public class Buscar extends javax.swing.JFrame {
             new String [] {
                 "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(JTablaInfo);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 450, 130));
@@ -189,14 +224,14 @@ public class Buscar extends javax.swing.JFrame {
             }
         });
     }
-    
-    public void setDatos(String Titulo,Date FechaSeleccionada,LocalTime horaSeleccionada,String Prioridad,String Estado,String Descripcion){
+
+    public void setDatos(String Titulo, Date FechaSeleccionada, LocalTime horaSeleccionada, String Prioridad, String Estado, String Descripcion) {
         this.Titulo = Titulo;
         this.FechaSeleccionada = FechaSeleccionada;
         this.Prioridad = Prioridad;
         this.Estado = Estado;
         this.Descripcion = Descripcion;
-        mt.addRow(new Object[]{Titulo,FechaSeleccionada,horaSeleccionada,Estado,Prioridad,Descripcion});
+        mt.addRow(new Object[]{Titulo, FechaSeleccionada, horaSeleccionada, Estado, Prioridad, Descripcion});
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
