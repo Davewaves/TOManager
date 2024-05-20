@@ -206,11 +206,10 @@ public class Buscar extends javax.swing.JFrame {
         
         Registro sel = registros.get(filaSel);//carga el registro segun indice de la fila seleccionada
         
-        com.crear.Editar indice = new com.crear.Editar(filaSel); //envia indice para saber que registro editar
-        
         System.out.println("buscar" + filaSel);
         com.crear.Editar abrir = new com.crear.Editar(); //abre la pantalla de editar
         
+        abrir.indice(filaSel);
         abrir.llenarCampos(sel); //usa el metodo llenarCampos() de la clase crear llevando el indice
         
         abrir.setVisible(true);

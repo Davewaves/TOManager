@@ -110,6 +110,7 @@ public class Editar extends javax.swing.JFrame {
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jComboBoxEstado2 = new javax.swing.JComboBox<>();
+        jLabel31 = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -590,6 +591,8 @@ public class Editar extends javax.swing.JFrame {
         jComboBoxEstado2.setEditable(true);
         jComboBoxEstado2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pendiente", "Realizado" }));
 
+        jLabel31.setText("jLabel31");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -597,7 +600,9 @@ public class Editar extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(103, 103, 103)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(165, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(116, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -648,7 +653,9 @@ public class Editar extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel31))
                 .addContainerGap(273, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -878,9 +885,11 @@ public class Editar extends javax.swing.JFrame {
 
         ArrayList<Registro> registros = DatosCompartidos.getRegistros();
         // si el titulo existe actualiza esa tarea
-        System.out.println("editar" + Editar.this.index);
+        int i =  Integer.parseInt(jLabel31.getText());
+        jLabel31.setVisible(false);
+        
         Registro edregistro = new Registro(Titulo, FechaSeleccionada, horaSeleccionada, Prioridad, Estado, Descripcion);
-        DatosCompartidos.editarRegistro(edregistro, Editar.this.index);
+        DatosCompartidos.editarRegistro(edregistro, i);
         JOptionPane.showMessageDialog(null, "Tarea actualizada con exito", "Exitoso", JOptionPane.INFORMATION_MESSAGE);
             
 
@@ -900,8 +909,9 @@ public class Editar extends javax.swing.JFrame {
         TxtDescripcion2.setText(registro.getDescripcion());
     }
     
-    public Editar(int i){
-        this.index = index;
+    public void indice(int i){
+        String tp = String.valueOf(i);
+        jLabel31.setText(tp);
     }
     
     private void BtnAtras2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAtras2ActionPerformed
@@ -1003,6 +1013,7 @@ public class Editar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
