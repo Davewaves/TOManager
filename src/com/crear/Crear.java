@@ -7,20 +7,18 @@ package com.crear;
 import java.time.LocalTime;
 import java.util.Date;
 
-
 /**
  *
  * @author Davewaves
  */
 public class Crear extends javax.swing.JFrame {
-    
-    
+
     /**
      * Creates new form Crear
      */
     public Crear() {
         initComponents();
-        
+
     }
 
     /**
@@ -43,10 +41,10 @@ public class Crear extends javax.swing.JFrame {
         BtnGuardar = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         BtnNuevo = new javax.swing.JButton();
-        BtnSalir = new javax.swing.JButton();
+        BtnAtras = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
-        BtnEliminar = new javax.swing.JButton();
+        BtnVerRegistros = new javax.swing.JButton();
         jDateChooser = new com.toedter.calendar.JDateChooser();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -132,32 +130,47 @@ public class Crear extends javax.swing.JFrame {
         BtnNuevo.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/EditarSelected24Px.png"))); // NOI18N
         BtnNuevo.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/EditarSelected24Px.png"))); // NOI18N
         BtnNuevo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        BtnNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnNuevoActionPerformed(evt);
+            }
+        });
 
-        BtnSalir.setBackground(new java.awt.Color(255, 51, 51));
-        BtnSalir.setFont(new java.awt.Font("Roboto Black", 1, 9)); // NOI18N
-        BtnSalir.setForeground(new java.awt.Color(255, 255, 255));
-        BtnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/Salir24px.png"))); // NOI18N
-        BtnSalir.setText("SALIR");
-        BtnSalir.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        BtnSalir.setFocusPainted(false);
-        BtnSalir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        BtnSalir.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/SalirSelected24px.png"))); // NOI18N
-        BtnSalir.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/SalirSelected24px.png"))); // NOI18N
-        BtnSalir.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/SalirSelected24px.png"))); // NOI18N
-        BtnSalir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        BtnAtras.setBackground(new java.awt.Color(255, 51, 51));
+        BtnAtras.setFont(new java.awt.Font("Roboto Black", 1, 9)); // NOI18N
+        BtnAtras.setForeground(new java.awt.Color(255, 255, 255));
+        BtnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/Atras24px.png"))); // NOI18N
+        BtnAtras.setText("ATRAS");
+        BtnAtras.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+        BtnAtras.setFocusPainted(false);
+        BtnAtras.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BtnAtras.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/AtrasSelected24px (1).png"))); // NOI18N
+        BtnAtras.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/AtrasSelected24px (1).png"))); // NOI18N
+        BtnAtras.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/AtrasSelected24px (1).png"))); // NOI18N
+        BtnAtras.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        BtnAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAtrasActionPerformed(evt);
+            }
+        });
 
-        BtnEliminar.setBackground(new java.awt.Color(255, 153, 51));
-        BtnEliminar.setFont(new java.awt.Font("Roboto Black", 1, 9)); // NOI18N
-        BtnEliminar.setForeground(new java.awt.Color(255, 255, 255));
-        BtnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/Borrar24px.png"))); // NOI18N
-        BtnEliminar.setText("ELIMINAR");
-        BtnEliminar.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        BtnEliminar.setFocusPainted(false);
-        BtnEliminar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        BtnEliminar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/BorrarSelected24px.png"))); // NOI18N
-        BtnEliminar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/BorrarSelected24px.png"))); // NOI18N
-        BtnEliminar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/BuscarSelected30px.png"))); // NOI18N
-        BtnEliminar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        BtnVerRegistros.setBackground(new java.awt.Color(255, 167, 79));
+        BtnVerRegistros.setFont(new java.awt.Font("Roboto Black", 1, 9)); // NOI18N
+        BtnVerRegistros.setForeground(new java.awt.Color(255, 255, 255));
+        BtnVerRegistros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/Buscar30px.png"))); // NOI18N
+        BtnVerRegistros.setText("BUSCAR");
+        BtnVerRegistros.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+        BtnVerRegistros.setFocusPainted(false);
+        BtnVerRegistros.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BtnVerRegistros.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/BuscarSelected30px.png"))); // NOI18N
+        BtnVerRegistros.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/BuscarSelected30px.png"))); // NOI18N
+        BtnVerRegistros.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/BuscarSelected30px.png"))); // NOI18N
+        BtnVerRegistros.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        BtnVerRegistros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnVerRegistrosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -165,7 +178,7 @@ public class Crear extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(BtnNuevo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(BtnGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(BtnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(BtnVerRegistros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,7 +186,7 @@ public class Crear extends javax.swing.JFrame {
                     .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(BtnSalir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(BtnAtras, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -187,11 +200,11 @@ public class Crear extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BtnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BtnVerRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BtnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BtnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12))
         );
 
@@ -263,33 +276,94 @@ public class Crear extends javax.swing.JFrame {
     }//GEN-LAST:event_TxtDescripcionActionPerformed
 
     private void BtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarActionPerformed
-    
-    LocalTime horaSeleccionada;
-    String Titulo = TxtTitulo.getText();
-    Date FechaSeleccionada = jDateChooser.getDate();    
-    
-    // Obtener la hora y los minutos seleccionados
+
+        LocalTime horaSeleccionada;
+        String Titulo = TxtTitulo.getText();
+        Date FechaSeleccionada = jDateChooser.getDate();
+
+        // Obtener la hora y los minutos seleccionados
         int hora = Integer.parseInt((String) jComboBoxHora.getSelectedItem());
         int minuto = Integer.parseInt((String) jComboBoxMinutos.getSelectedItem());
-    
-    // Combinar hora y minutos en una variable LocalTime
+
+        // Combinar hora y minutos en una variable LocalTime
         horaSeleccionada = LocalTime.of(hora, minuto);
-    
+
         // Obtener datos de los otros campos
-    String Prioridad = (String) jComboBoxPrioridad.getSelectedItem();
-    String Estado = (String) jComboBoxEstado.getSelectedItem();
-    String Descripcion = TxtDescripcion.getText(); 
-    
-    //Instancia del JFRAME a buscar
-    Buscar mBuscar = new Buscar();
-    
-    //Pasar datos obtenidos al método setDatos
-    mBuscar.setDatos(Titulo, FechaSeleccionada, horaSeleccionada, Prioridad, Estado, Descripcion);
-    
-    // Hcaer visible el JFRAME
-    mBuscar.setVisible(true);
-    
+        String Prioridad = (String) jComboBoxPrioridad.getSelectedItem();
+        String Estado = (String) jComboBoxEstado.getSelectedItem();
+        String Descripcion = TxtDescripcion.getText();
+
+        //Instancia del JFRAME a buscar
+        Buscar mBuscar = new Buscar();
+
+        //Pasar datos obtenidos al método setDatos
+        mBuscar.setDatos(Titulo, FechaSeleccionada, horaSeleccionada, Prioridad, Estado, Descripcion);
+
+        // Hcaer visible el JFRAME
+        /*mBuscar.setVisible(true); */
+
     }//GEN-LAST:event_BtnGuardarActionPerformed
+
+    private void BtnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNuevoActionPerformed
+        
+        //Limpiar los modulos
+        TxtTitulo.setText("");
+        jDateChooser.setDate(null);
+        jComboBoxHora.removeAllItems();
+        jComboBoxMinutos.removeAllItems();
+        jComboBoxPrioridad.removeAllItems();
+        jComboBoxEstado.removeAllItems();
+        TxtDescripcion.setText("");
+
+        // Volver a agregar las opciones necesarias en los JComboBox
+        agregarOpcionesComboBoxHora(); // Método para agregar opciones al JComboBox de horas
+        agregarOpcionesComboBoxMinutos(); // Método para agregar opciones al JComboBox de minutos
+        agregarOpcionesComboBoxPrioridad(); // Método para agregar opciones al JComboBox de prioridad
+        agregarOpcionesComboBoxEstado(); // Método para agregar opciones al JComboBox de estado
+
+    }//GEN-LAST:event_BtnNuevoActionPerformed
+
+    private void BtnVerRegistrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVerRegistrosActionPerformed
+        com.crear.Buscar abrir = new com.crear.Buscar();
+        abrir.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_BtnVerRegistrosActionPerformed
+
+    private void BtnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAtrasActionPerformed
+      com.modulo.Principal abrir = new com.modulo.Principal();
+        abrir.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_BtnAtrasActionPerformed
+
+    private void agregarOpcionesComboBoxHora() {
+        // Agregar las opciones de horas al JComboBox
+        for (int i = 1; i <= 24; i++) {
+            jComboBoxHora.addItem(String.format("%02d", i)); // Asegura que los números tengan dos dígitos
+        }
+    }
+
+    // Método para agregar opciones al JComboBox de minutos
+    private void agregarOpcionesComboBoxMinutos() {
+        // Agregar las opciones de minutos al JComboBox
+        for (int i = 0; i < 60; i++) {
+            jComboBoxMinutos.addItem(String.format("%02d", i)); // Asegura que los números tengan dos dígitos
+        }
+    }
+
+// Método para agregar opciones al JComboBox de prioridad
+    private void agregarOpcionesComboBoxPrioridad() {
+        // Agregar las opciones de prioridad al JComboBox
+        jComboBoxPrioridad.addItem("Baja");
+        jComboBoxPrioridad.addItem("Media");
+        jComboBoxPrioridad.addItem("Alta");
+    }
+
+// Método para agregar opciones al JComboBox de estado
+    private void agregarOpcionesComboBoxEstado() {
+        // Agregar las opciones de estado al JComboBox
+        jComboBoxEstado.addItem("Pendiente");
+        jComboBoxEstado.addItem("Realizado");
+    }
 
     /**
      * @param args the command line arguments
@@ -327,10 +401,10 @@ public class Crear extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnEliminar;
+    private javax.swing.JButton BtnAtras;
     private javax.swing.JButton BtnGuardar;
     private javax.swing.JButton BtnNuevo;
-    private javax.swing.JButton BtnSalir;
+    private javax.swing.JButton BtnVerRegistros;
     private javax.swing.JTextField TxtDescripcion;
     private javax.swing.JTextField TxtTitulo;
     private javax.swing.JComboBox<String> jComboBoxEstado;
