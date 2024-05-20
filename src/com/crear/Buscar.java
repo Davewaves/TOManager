@@ -45,6 +45,7 @@ public class Buscar extends javax.swing.JFrame {
         BtnEditar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         JTablaInfo = new javax.swing.JTable();
+        BtnAtras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -108,6 +109,25 @@ public class Buscar extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 450, 130));
 
+        BtnAtras.setBackground(new java.awt.Color(255, 51, 51));
+        BtnAtras.setFont(new java.awt.Font("Roboto Black", 1, 9)); // NOI18N
+        BtnAtras.setForeground(new java.awt.Color(255, 255, 255));
+        BtnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/Atras24px.png"))); // NOI18N
+        BtnAtras.setText("ATRAS");
+        BtnAtras.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+        BtnAtras.setFocusPainted(false);
+        BtnAtras.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BtnAtras.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/AtrasSelected24px (1).png"))); // NOI18N
+        BtnAtras.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/AtrasSelected24px (1).png"))); // NOI18N
+        BtnAtras.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/AtrasSelected24px (1).png"))); // NOI18N
+        BtnAtras.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        BtnAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAtrasActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BtnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, 50, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -127,6 +147,12 @@ public class Buscar extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAtrasActionPerformed
+        com.crear.Crear abrir = new com.crear.Crear();
+        abrir.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_BtnAtrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -174,6 +200,7 @@ public class Buscar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnAtras;
     private javax.swing.JButton BtnEditar;
     private javax.swing.JButton BtnEliminar;
     private javax.swing.JButton BtnSalir;
