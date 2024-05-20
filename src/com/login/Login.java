@@ -4,6 +4,9 @@
  */
 package com.login;
 
+import java.util.ArrayList; // Importar la clase ArrayList
+import javax.swing.JOptionPane; // Importar la clase JOptionPane
+
 /**
  *
  * @author Davewaves
@@ -69,6 +72,11 @@ public class Login extends javax.swing.JFrame {
         jButton4.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/IniciarSesionSelected30px.png"))); // NOI18N
         jButton4.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/IniciarSesionSelected30px.png"))); // NOI18N
         jButton4.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/IniciarSesionSelected30px.png"))); // NOI18N
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 150, 50));
 
         jButton5.setBackground(new java.awt.Color(0, 40, 121));
@@ -140,6 +148,42 @@ public class Login extends javax.swing.JFrame {
     private void TxtTemperatura2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtTemperatura2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtTemperatura2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        //boton iniciar sesion
+        
+        //boton iniciar sesion
+        ArrayList<String> users = new ArrayList<>(); // Crear un ArrayList de usuarios
+        ArrayList<String> passwords = new ArrayList<>(); // Crear un ArrayList de contraseñas
+       
+        //usuarios de prueba
+        users.add("franklinran03");
+        passwords.add("1234");
+        users.add("davewaves");
+        passwords.add("4321");
+        users.add("oscar");
+        passwords.add("oscar123");
+        
+        
+        //obtiene valor de los campos
+        String user = TxtTemperatura2.getText();
+        String password = new String(jPasswordField1.getPassword());
+        
+        // busca el indice del valor de user si no existe devuelve -1
+        int userIndex = users.indexOf(user);
+        
+        //verifica el nombre de usraio exista y si es asi verifica que la contraseña sea la misma
+        if (userIndex != -1 && password.equals(passwords.get(userIndex))) {
+            //inicio de sesion
+            com.modulo.Principal principal = new com.modulo.Principal();
+            
+            principal.setVisible(true);
+            this.setVisible(false);
+        } else {
+            //mensaje de error
+            JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
