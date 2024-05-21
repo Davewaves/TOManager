@@ -127,7 +127,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        com.buscar.Dialog abrir = new com.buscar.Dialog(this, rootPaneCheckingEnabled);
+        com.crear.Buscar abrir = new com.crear.Buscar();
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton5ActionPerformed

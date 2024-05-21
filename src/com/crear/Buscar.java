@@ -8,6 +8,7 @@ import javax.swing.table.DefaultTableModel;
 import com.crear.Registro;
 import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -73,6 +74,8 @@ public class Buscar extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         JTablaInfo = new javax.swing.JTable();
         BtnAtras = new javax.swing.JButton();
+        txtBusqueda = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -173,6 +176,22 @@ public class Buscar extends javax.swing.JFrame {
         });
         jPanel1.add(BtnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, 50, -1));
 
+        txtBusqueda.setText("Ingrese el titulo");
+        txtBusqueda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBusquedaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 220, 30));
+
+        jButton1.setText("Buscar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, 90, 30));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -225,6 +244,38 @@ public class Buscar extends javax.swing.JFrame {
         mt.removeRow(filaSel);//elimina la fila de la tabla
     }//GEN-LAST:event_BtnEliminarActionPerformed
 
+    private void txtBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBusquedaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBusquedaActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        ArrayList<Registro> registro = DatosCompartidos.getRegistros();
+        boolean encontrado = false;
+        //recorre la lista segun la busqueda
+        for (int i = 0; i < registro.size(); i++){
+            if(registro.get(i).getTitulo().equalsIgnoreCase(txtBusqueda.getText())){
+                encontrado = true;
+                //limpia las filas antes de agrgar un nuevo resultado
+                mt.setRowCount(0);
+                
+                //agrega a la tabla los resultados encontrados
+                mt.addRow(new Object[]{
+                    registro.get(i).getTitulo(),
+                    registro.get(i).getFechaSeleccionada(),
+                    registro.get(i).getHoraSeleccionada(),
+                    registro.get(i).getEstado(),
+                    registro.get(i).getPrioridad(),
+                    registro.get(i).getDescripcion()
+                });
+            } 
+        }
+
+        if (!encontrado) {
+            //mensaje de error
+            JOptionPane.showMessageDialog(null, "Titulo no encontrado", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -276,7 +327,9 @@ public class Buscar extends javax.swing.JFrame {
     private javax.swing.JButton BtnEliminar;
     private javax.swing.JButton BtnSalir;
     private javax.swing.JTable JTablaInfo;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField txtBusqueda;
     // End of variables declaration//GEN-END:variables
 }
