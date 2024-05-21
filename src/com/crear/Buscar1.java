@@ -1,6 +1,5 @@
 package com.crear;
 
-import com.buscar.*;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,14 +8,17 @@ import com.crear.Registro;
 import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
  * @author Davewaves
  */
-public class Buscar extends javax.swing.JFrame {
+public class Buscar1 extends javax.swing.JFrame {
 
     DefaultTableModel mt = new DefaultTableModel();
+    HashMap<Integer, Integer> indiceRegistroMap = new HashMap<>(); // Mapeo de índices de fila en la tabla a índices de registro en DatosCompartidos
 
     private String Titulo;
     private Date FechaSeleccionada;
@@ -24,18 +26,21 @@ public class Buscar extends javax.swing.JFrame {
     private String Prioridad;
     private String Estado;
     private String Descripcion;
-    
+
     private String formatDate(Date date) {
-    SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
-    return formatter.format(date);
-}
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+        return formatter.format(date);
+    }
+
     private String formatTime(LocalTime time) {
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-    return time.format(formatter);
-}
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+        return time.format(formatter);
+    }
 
     private void cargarDatos() {
         ArrayList<Registro> registros = DatosCompartidos.getRegistros();
+        indiceRegistroMap.clear(); // Limpiar el mapeo antes de cargar nuevos datos
+        int index = 0;
         for (Registro registro : registros) {
             String fechaFormateada = formatDate(registro.getFechaSeleccionada());
             String horaFormateada = formatTime(registro.getHoraSeleccionada());
@@ -47,10 +52,12 @@ public class Buscar extends javax.swing.JFrame {
                 registro.getPrioridad(),
                 registro.getDescripcion()
             });
+            indiceRegistroMap.put(index, index); // Mapear el índice de fila al índice de registro en DatosCompartidos
+            index++;
         }
     }
 
-    public Buscar() {
+    public Buscar1() {
         initComponents();
         String titulosTabla[] = {"Titulo", "Fecha", "Hora", "Estado", "Prioridad", "Descripción"};
         mt.setColumnIdentifiers(titulosTabla);
@@ -224,33 +231,50 @@ public class Buscar extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnAtrasActionPerformed
 
     private void BtnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEditarActionPerformed
-        
+
         ArrayList<Registro> registros = DatosCompartidos.getRegistros();
         int filaSel = JTablaInfo.getSelectedRow(); //obtiene indice de fila seleccionada
-        
+
         Registro sel = registros.get(filaSel);//carga el registro segun indice de la fila seleccionada
-        
+
         com.crear.Editar abrir = new com.crear.Editar(); //abre la pantalla de editar
-        
+
         abrir.indice(filaSel);
         abrir.llenarCampos(sel); //usa el metodo llenarCampos() de la clase crear llevando el indice
-        
+
         abrir.setVisible(true);
         this.setVisible(false);
-       
-        
+
+
     }//GEN-LAST:event_BtnEditarActionPerformed
 
     private void BtnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarActionPerformed
-        // elimina el registro 
-        int filaSel = JTablaInfo.getSelectedRow(); //obtiene indice de fila seleccionada
-        
-        DatosCompartidos.eliminarRegistro(filaSel);//llama funcion para eliminar
-        mt.removeRow(filaSel);//elimina la fila de la tabla
-        
-        
-
+       int filaSel = JTablaInfo.getSelectedRow(); // Obtener el índice de la fila seleccionada
+    if (filaSel != -1) { // Verificar si se seleccionó una fila
+        int registroIndex = indiceRegistroMap.get(filaSel); // Obtener el índice correspondiente en DatosCompartidos
+        DatosCompartidos.eliminarRegistro(registroIndex); // Eliminar el registro en DatosCompartidos
+        mt.removeRow(filaSel); // Eliminar la fila de la tabla
+        actualizarMapeo(filaSel); // Actualizar el mapeo de índices
+        // Actualiza el contador de registros
+        int totalRegistros = mt.getRowCount();
+        // Actualiza la etiqueta de contador de registros o cualquier otro componente similar
+        JOptionPane.showMessageDialog(null, "Total de registros: " + totalRegistros, "Información", JOptionPane.INFORMATION_MESSAGE);
+    } else {
+        JOptionPane.showMessageDialog(null, "Por favor, seleccione una fila para eliminar.", "Error", JOptionPane.ERROR_MESSAGE);
+    
     }//GEN-LAST:event_BtnEliminarActionPerformed
+    }
+    
+private void actualizarMapeo(int removedIndex) {
+        for (Map.Entry<Integer, Integer> entry : indiceRegistroMap.entrySet()) {
+            int rowIndex = entry.getKey();
+            int registroIndex = entry.getValue();
+            if (rowIndex > removedIndex) {
+                indiceRegistroMap.put(rowIndex - 1, registroIndex); // Actualizar el índice de fila
+            }
+        }
+        indiceRegistroMap.remove(removedIndex); // Eliminar la entrada correspondiente al índice de fila eliminado
+    }
 
     private void txtBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBusquedaActionPerformed
         // TODO add your handling code here:
@@ -260,12 +284,12 @@ public class Buscar extends javax.swing.JFrame {
         ArrayList<Registro> registro = DatosCompartidos.getRegistros();
         boolean encontrado = false;
         //recorre la lista segun la busqueda
-        for (int i = 0; i < registro.size(); i++){
-            if(registro.get(i).getTitulo().equalsIgnoreCase(txtBusqueda.getText())){
+        for (int i = 0; i < registro.size(); i++) {
+            if (registro.get(i).getTitulo().equalsIgnoreCase(txtBusqueda.getText())) {
                 encontrado = true;
                 //limpia las filas antes de agrgar un nuevo resultado
                 mt.setRowCount(0);
-                
+
                 //agrega a la tabla los resultados encontrados
                 mt.addRow(new Object[]{
                     registro.get(i).getTitulo(),
@@ -275,7 +299,7 @@ public class Buscar extends javax.swing.JFrame {
                     registro.get(i).getPrioridad(),
                     registro.get(i).getDescripcion()
                 });
-            } 
+            }
         }
 
         if (!encontrado) {
@@ -285,7 +309,7 @@ public class Buscar extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void BtnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSalirActionPerformed
-         System.exit(WIDTH);
+        System.exit(WIDTH);
     }//GEN-LAST:event_BtnSalirActionPerformed
 
     /**
@@ -305,21 +329,23 @@ public class Buscar extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Buscar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Buscar1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Buscar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Buscar1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Buscar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Buscar1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Buscar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Buscar1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Buscar().setVisible(true);
+                new Buscar1().setVisible(true);
             }
         });
     }

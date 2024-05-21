@@ -314,13 +314,13 @@ public class Crear extends javax.swing.JFrame {
         mBuscar.setDatos(Titulo, FechaSeleccionada, horaSeleccionada, Prioridad, Estado, Descripcion);
 
         // Hcaer visible el JFRAME
-        mBuscar.setVisible(true);
+        //mBuscar.setVisible(true);
 
         ArrayList<Registro> registros = DatosCompartidos.getRegistros();
         Registro registro = new Registro(Titulo, FechaSeleccionada, horaSeleccionada, Prioridad, Estado, Descripcion);
         DatosCompartidos.agregarRegistro(registro);
 
-        
+        JOptionPane.showMessageDialog(this, "El registro fue creado con exito", "Informacion", JOptionPane.INFORMATION_MESSAGE);
         
     }//GEN-LAST:event_BtnGuardarActionPerformed
 
