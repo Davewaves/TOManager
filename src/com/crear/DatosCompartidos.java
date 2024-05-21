@@ -24,11 +24,6 @@ public class DatosCompartidos {
     public static void eliminarRegistro(int e) {
         registros.remove(e);
     }
-    
-    /*actualizar registro
-    public static void editarRegistro(String titulo, Date fechaSeleccionada, LocalTime horaSeleccionada, String prioridad, String estado, String descripcion, int e) {
-        registros.set(e, titulo, fechaSeleccionada, horaSeleccionada, prioridad, estado, descripcion);
-    }*/
 
     
     //actualizar registro

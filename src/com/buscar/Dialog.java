@@ -4,6 +4,12 @@
  */
 package com.buscar;
 
+import com.crear.DatosCompartidos;
+import com.crear.Registro;
+import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.Date;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -44,6 +50,7 @@ public class Dialog extends javax.swing.JDialog {
         JTablaInfo = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
         TxtTemperatura2 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -147,7 +154,15 @@ public class Dialog extends javax.swing.JDialog {
                 TxtTemperatura2ActionPerformed(evt);
             }
         });
-        jPanel1.add(TxtTemperatura2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 280, 30));
+        jPanel1.add(TxtTemperatura2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 230, 30));
+
+        jButton1.setText("Buscar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -170,6 +185,37 @@ public class Dialog extends javax.swing.JDialog {
     private void TxtTemperatura2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtTemperatura2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtTemperatura2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+       ArrayList<Registro> registro = DatosCompartidos.getRegistros();
+        //String busqueda = TxtTemperatura2.getText();
+        
+        // realiza la busqueda si no encuentra nada similar devuelve -1
+        //int index = registro.indexOf(busqueda);
+        
+        for (int i = 0; i < registro.size(); i++){
+            if(registro.get(i).getTitulo().equalsIgnoreCase(TxtTemperatura2.getText())){
+                registro.get(i);
+                mt.addRow(new Object[]{
+                    i,
+                    registro.get(i).getTitulo(),
+                    registro.get(i).getFechaSeleccionada(),
+                    registro.get(i).getHoraSeleccionada(),
+                    registro.get(i).getEstado(),
+                    registro.get(i).getPrioridad(),
+                    registro.get(i).getDescripcion()
+                });
+            } else {
+                //mensaje de error
+                JOptionPane.showMessageDialog(null, "Titulo no encontrado", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        
+        
+        
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -219,10 +265,19 @@ public class Dialog extends javax.swing.JDialog {
     private javax.swing.JButton BtnSalir;
     private javax.swing.JTable JTablaInfo;
     private javax.swing.JTextField TxtTemperatura2;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
+
+    private String formatDate(Date fechaSeleccionada) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private String formatTime(LocalTime horaSeleccionada) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
