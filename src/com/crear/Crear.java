@@ -315,7 +315,8 @@ public class Crear extends javax.swing.JFrame {
 
         // Hcaer visible el JFRAME
         mBuscar.setVisible(true);
-
+        
+        //Agregar los datos al ArrayList Registro
         ArrayList<Registro> registros = DatosCompartidos.getRegistros();
         Registro registro = new Registro(Titulo, FechaSeleccionada, horaSeleccionada, Prioridad, Estado, Descripcion);
         DatosCompartidos.agregarRegistro(registro);

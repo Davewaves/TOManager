@@ -29,9 +29,9 @@ public class Principal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        BtnCerrarSesion = new javax.swing.JButton();
+        BtnCrear = new javax.swing.JButton();
+        BtnBuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,51 +49,51 @@ public class Principal extends javax.swing.JFrame {
         jLabel6.setText("MENU DE INICIO");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 140, 40));
 
-        jButton2.setBackground(new java.awt.Color(255, 51, 51));
-        jButton2.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/Cerrar30px.png"))); // NOI18N
-        jButton2.setText("CERRAR SESION");
-        jButton2.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        jButton2.setFocusPainted(false);
-        jButton2.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/CerrarSelectex30px.png"))); // NOI18N
-        jButton2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/CerrarSelectex30px.png"))); // NOI18N
-        jButton2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/CerrarSelectex30px.png"))); // NOI18N
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        BtnCerrarSesion.setBackground(new java.awt.Color(255, 51, 51));
+        BtnCerrarSesion.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        BtnCerrarSesion.setForeground(new java.awt.Color(255, 255, 255));
+        BtnCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/Cerrar30px.png"))); // NOI18N
+        BtnCerrarSesion.setText("CERRAR SESION");
+        BtnCerrarSesion.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+        BtnCerrarSesion.setFocusPainted(false);
+        BtnCerrarSesion.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/CerrarSelectex30px.png"))); // NOI18N
+        BtnCerrarSesion.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/CerrarSelectex30px.png"))); // NOI18N
+        BtnCerrarSesion.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/CerrarSelectex30px.png"))); // NOI18N
+        BtnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                BtnCerrarSesionActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 340, 50));
+        jPanel1.add(BtnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 340, 50));
 
-        jButton4.setBackground(new java.awt.Color(0, 204, 51));
-        jButton4.setFont(new java.awt.Font("Roboto Black", 1, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/Nuevo30px.png"))); // NOI18N
-        jButton4.setText("CREAR O EDITAR TAREA");
-        jButton4.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        jButton4.setFocusPainted(false);
-        jButton4.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/Nuevo_Selected30px.png"))); // NOI18N
-        jButton4.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/Nuevo_Selected30px.png"))); // NOI18N
-        jButton4.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/Nuevo_Selected30px.png"))); // NOI18N
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        BtnCrear.setBackground(new java.awt.Color(0, 204, 51));
+        BtnCrear.setFont(new java.awt.Font("Roboto Black", 1, 12)); // NOI18N
+        BtnCrear.setForeground(new java.awt.Color(255, 255, 255));
+        BtnCrear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/Nuevo30px.png"))); // NOI18N
+        BtnCrear.setText("CREAR O EDITAR TAREA");
+        BtnCrear.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+        BtnCrear.setFocusPainted(false);
+        BtnCrear.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/Nuevo_Selected30px.png"))); // NOI18N
+        BtnCrear.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/Nuevo_Selected30px.png"))); // NOI18N
+        BtnCrear.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/Nuevo_Selected30px.png"))); // NOI18N
+        BtnCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                BtnCrearActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 340, 50));
+        jPanel1.add(BtnCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 340, 50));
 
-        jButton5.setBackground(new java.awt.Color(0, 51, 153));
-        jButton5.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/Buscar30px.png"))); // NOI18N
-        jButton5.setText("BUSCAR UNA TAREA");
-        jButton5.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        jButton5.setFocusPainted(false);
-        jButton5.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/BuscarSelected30px.png"))); // NOI18N
-        jButton5.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/BuscarSelected30px.png"))); // NOI18N
-        jButton5.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/BuscarSelected30px.png"))); // NOI18N
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 340, 50));
+        BtnBuscar.setBackground(new java.awt.Color(0, 51, 153));
+        BtnBuscar.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        BtnBuscar.setForeground(new java.awt.Color(255, 255, 255));
+        BtnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/Buscar30px.png"))); // NOI18N
+        BtnBuscar.setText("BUSCAR UNA TAREA");
+        BtnBuscar.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+        BtnBuscar.setFocusPainted(false);
+        BtnBuscar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/BuscarSelected30px.png"))); // NOI18N
+        BtnBuscar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/BuscarSelected30px.png"))); // NOI18N
+        BtnBuscar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/BuscarSelected30px.png"))); // NOI18N
+        jPanel1.add(BtnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 340, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -111,15 +111,15 @@ public class Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void BtnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCrearActionPerformed
         com.crear.Crear abrir = new com.crear.Crear();
         abrir.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_BtnCrearActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void BtnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCerrarSesionActionPerformed
         System.exit(WIDTH);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_BtnCerrarSesionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,9 +158,9 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton BtnBuscar;
+    private javax.swing.JButton BtnCerrarSesion;
+    private javax.swing.JButton BtnCrear;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;

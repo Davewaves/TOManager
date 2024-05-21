@@ -34,11 +34,11 @@ public class Login extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        BtnIniciarSesion = new javax.swing.JButton();
+        BtnRegistro = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        TxtTemperatura2 = new javax.swing.JTextField();
+        TxtUsuario = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
         jCheckBox1 = new javax.swing.JCheckBox();
@@ -62,34 +62,34 @@ public class Login extends javax.swing.JFrame {
         jLabel1.setText("PRUEBA LOGIN");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 140, 33));
 
-        jButton4.setBackground(new java.awt.Color(0, 156, 39));
-        jButton4.setFont(new java.awt.Font("Roboto Black", 1, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/IniciarSesion30px.png"))); // NOI18N
-        jButton4.setText("INICIAR SESION");
-        jButton4.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        jButton4.setFocusPainted(false);
-        jButton4.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/IniciarSesionSelected30px.png"))); // NOI18N
-        jButton4.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/IniciarSesionSelected30px.png"))); // NOI18N
-        jButton4.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/IniciarSesionSelected30px.png"))); // NOI18N
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        BtnIniciarSesion.setBackground(new java.awt.Color(0, 156, 39));
+        BtnIniciarSesion.setFont(new java.awt.Font("Roboto Black", 1, 12)); // NOI18N
+        BtnIniciarSesion.setForeground(new java.awt.Color(255, 255, 255));
+        BtnIniciarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/IniciarSesion30px.png"))); // NOI18N
+        BtnIniciarSesion.setText("INICIAR SESION");
+        BtnIniciarSesion.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+        BtnIniciarSesion.setFocusPainted(false);
+        BtnIniciarSesion.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/IniciarSesionSelected30px.png"))); // NOI18N
+        BtnIniciarSesion.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/IniciarSesionSelected30px.png"))); // NOI18N
+        BtnIniciarSesion.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/IniciarSesionSelected30px.png"))); // NOI18N
+        BtnIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                BtnIniciarSesionActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 150, 50));
+        jPanel1.add(BtnIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 150, 50));
 
-        jButton5.setBackground(new java.awt.Color(0, 40, 121));
-        jButton5.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/Registrarse30px.png"))); // NOI18N
-        jButton5.setText("REGISTRARSE");
-        jButton5.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        jButton5.setFocusPainted(false);
-        jButton5.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/RegistrarseSelected30px.png"))); // NOI18N
-        jButton5.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/RegistrarseSelected30px.png"))); // NOI18N
-        jButton5.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/RegistrarseSelected30px.png"))); // NOI18N
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, 150, 50));
+        BtnRegistro.setBackground(new java.awt.Color(0, 40, 121));
+        BtnRegistro.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        BtnRegistro.setForeground(new java.awt.Color(255, 255, 255));
+        BtnRegistro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/Registrarse30px.png"))); // NOI18N
+        BtnRegistro.setText("REGISTRARSE");
+        BtnRegistro.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+        BtnRegistro.setFocusPainted(false);
+        BtnRegistro.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/RegistrarseSelected30px.png"))); // NOI18N
+        BtnRegistro.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/RegistrarseSelected30px.png"))); // NOI18N
+        BtnRegistro.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/botones/RegistrarseSelected30px.png"))); // NOI18N
+        jPanel1.add(BtnRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, 150, 50));
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 0));
         jLabel6.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
@@ -102,15 +102,15 @@ public class Login extends javax.swing.JFrame {
         jLabel4.setText("USUARIO:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
-        TxtTemperatura2.setBackground(new java.awt.Color(0, 54, 21));
-        TxtTemperatura2.setForeground(new java.awt.Color(204, 204, 204));
-        TxtTemperatura2.setText("Ingrese su usuario");
-        TxtTemperatura2.addActionListener(new java.awt.event.ActionListener() {
+        TxtUsuario.setBackground(new java.awt.Color(0, 54, 21));
+        TxtUsuario.setForeground(new java.awt.Color(204, 204, 204));
+        TxtUsuario.setText("Ingrese su usuario");
+        TxtUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtTemperatura2ActionPerformed(evt);
+                TxtUsuarioActionPerformed(evt);
             }
         });
-        jPanel1.add(TxtTemperatura2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 360, 30));
+        jPanel1.add(TxtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 360, 30));
 
         jLabel5.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -145,11 +145,11 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TxtTemperatura2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtTemperatura2ActionPerformed
+    private void TxtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TxtTemperatura2ActionPerformed
+    }//GEN-LAST:event_TxtUsuarioActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void BtnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnIniciarSesionActionPerformed
         //boton iniciar sesion
         
         //boton iniciar sesion
@@ -166,7 +166,7 @@ public class Login extends javax.swing.JFrame {
         
         
         //obtiene valor de los campos
-        String user = TxtTemperatura2.getText();
+        String user = TxtUsuario.getText();
         String password = new String(jPasswordField1.getPassword());
         
         // busca el indice del valor de user si no existe devuelve -1
@@ -183,7 +183,7 @@ public class Login extends javax.swing.JFrame {
             //mensaje de error
             JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos", "Error", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_BtnIniciarSesionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -222,9 +222,9 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Background;
-    private javax.swing.JTextField TxtTemperatura2;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton BtnIniciarSesion;
+    private javax.swing.JButton BtnRegistro;
+    private javax.swing.JTextField TxtUsuario;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;

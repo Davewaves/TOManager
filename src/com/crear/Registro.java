@@ -20,7 +20,8 @@ public class Registro {
     private String prioridad;
     private String estado;
     private String descripcion;
-
+    
+    //Metodo constructor que asigna los valores.
     public Registro(String titulo, Date fechaSeleccionada, LocalTime horaSeleccionada, String prioridad, String estado, String descripcion) {
         this.titulo = titulo;
         this.fechaSeleccionada = fechaSeleccionada;
